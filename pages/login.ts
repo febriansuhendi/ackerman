@@ -5,7 +5,6 @@ export class LoginPage {
     readonly inputEmail: Locator;
     readonly inputPassword: Locator;
     readonly buttonLogin: Locator;
-    readonly baseUrl = 'https://e-commerce-microserv-nrvq.bolt.host';
     constructor(page: Page) {
         this.page = page;
         this.inputEmail = this.page.getByTestId('login-email-input');
@@ -14,7 +13,7 @@ export class LoginPage {
     }
 
     async openLoginPage() {
-        await this.page.goto(`${this.baseUrl}/login`);
+        await this.page.goto(`/login`);
     }
 
     async login(email: string, password: string) {
@@ -24,6 +23,6 @@ export class LoginPage {
     }
 
     async verifyLoginSuccess() {
-        await expect(this.page).toHaveURL(`${this.baseUrl}/dashboard`);
+        await expect(this.page).toHaveURL(`/dashboard`);
     }
 }
