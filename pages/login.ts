@@ -1,4 +1,5 @@
 import { Page, Locator, expect } from "@playwright/test";
+import { Environment } from "../config/env";
 
 export class LoginPage {
     page: Page;
@@ -13,7 +14,7 @@ export class LoginPage {
     }
 
     async openLoginPage() {
-        await this.page.goto(`/login`);
+        await this.page.goto(`${Environment.baseUrl}/login`);
     }
 
     async login(email: string, password: string) {

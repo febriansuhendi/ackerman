@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test:staging": "set TEST_ENV=staging&& playwright test",
+    "test:uat": "set TEST_ENV=uat&& playwright test",
+    "test:production": "set TEST_ENV=production&& playwright test"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
